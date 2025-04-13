@@ -27,7 +27,35 @@ This project develops a Retrieval-Augmented Generation (RAG) system that uses a 
 - **Docker:** A pre-built Docker image is provided for easy deployment.
 - **Hosting:** Deployed on Google Cloud Platform.
 
-## How to Run with GPUs
+## How to Run POC
+
+1. Marqo requires Docker. To install Docker go to Docker Docs and install for your operating system.Once Docker is installed, you can use it to run Marqo. First, open the Docker application and then head to your terminal and enter the following:
+
+```bash
+docker pull marqoai/marqo:latest
+docker rm -f marqo
+docker run --name marqo -it -p 8882:8882 marqoai/marqo:latest
+```
+
+2. Generate index using Marqo:
+
+```python
+python generate_index_marqo.py
+```
+
+3. Login Huggingface:
+
+```bash
+huggingface-cli login <YOUR-HUGGINGFACE-ACCESS-TOKEN>
+```
+
+4. Start streamlit app:
+
+```python
+streamlit run streamlit_app.py
+```
+
+## How to Run the Final App with GPUs
 
 1. Procure GPU GCP machine with appropriate boot disk and image
 2. Clone this repository
