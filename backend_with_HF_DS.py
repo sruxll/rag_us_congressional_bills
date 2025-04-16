@@ -33,16 +33,6 @@ llm = pipeline(
     device=0 if torch.cuda.is_available() else -1,
 )
 
-# === Load FAISS Index and Data ===
-faiss_path = hf_hub_download(
-    repo_id="joynae5/CongressionalBillsDS",
-    filename="bill_embeddings.index",
-    repo_type="dataset"
-)
-
-faiss_index = faiss.read_index(faiss_path)
-
-# Download the CSV from Hugging Face Hub
 csv_path = hf_hub_download(
     repo_id="joynae5/CongressionalBillsDS",
     filename="data/parsed_bills_115-119_chunks_only_embedded.csv",
@@ -52,6 +42,14 @@ csv_path = hf_hub_download(
 df = pd.read_csv(csv_path)
 df["embedding"] = df["embedding"].apply(lambda x: np.array(ast.literal_eval(x)))
 
+# Load FAISS index from Hugging Face
+faiss_path = hf_hub_download(
+    repo_id="joynae5/CongressionalBillsDS",
+    filename="bill_embeddings.index",
+    repo_type="dataset"
+)
+
+faiss_index = faiss.read_index(faiss_path)
 # === Similarity Tracking ===
 similarity_scores = []
 bert_scores = []
