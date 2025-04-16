@@ -34,7 +34,13 @@ llm = pipeline(
 )
 
 # === Load FAISS Index and Data ===
-faiss_index = faiss.read_index("bill_embeddings.index")
+faiss_path = hf_hub_download(
+    repo_id="joynae5/CongressionalBillsDS",
+    filename="bill_embeddings.index",
+    repo_type="dataset"
+)
+
+faiss_index = faiss.read_index(faiss_path)
 
 # Download the CSV from Hugging Face Hub
 csv_path = hf_hub_download(
