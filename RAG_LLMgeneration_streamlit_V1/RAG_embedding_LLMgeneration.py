@@ -4,11 +4,8 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 from transformers import pipeline, AutoTokenizer, AutoModelForCausalLM
 import ast  # To safely evaluate string representations of lists
-# from tqdm import tqdm
-# from nltk.corpus import wordnet
-# from huggingface_hub import snapshot_download
 import faiss
-# import re
+
 """Make sure to upload "parsed_bills_115-119_chunks_only_embedded.csv and "bill_embeddings.index in working directory"""
 
 
@@ -55,10 +52,7 @@ def run_llm_inference(prompt, tokenizer, model):
     ]
     return tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
 
-
-def rag(query, tokenizer, model, top_k=5):
-    # Load Sentence Transformer for embeddings
-    embed_model = SentenceTransformer('all-MiniLM-L6-v2', device="cpu")
+def load_files():
     # Load FAISS Index
     faiss_index = faiss.read_index("bill_embeddings.index")
     # Load Data
@@ -66,6 +60,11 @@ def rag(query, tokenizer, model, top_k=5):
     df = pd.read_csv(file_path)
     # Convert embeddings from CSV to NumPy Arrays
     df["embedding"] = df["embedding"].apply(lambda x: np.array(ast.literal_eval(x)))
+    return faiss_index, df
+
+def rag(query, tokenizer, model, faiss_index, df, top_k=5):
+    # Load Sentence Transformer for embeddings
+    embed_model = SentenceTransformer('all-MiniLM-L6-v2', device="cpu")
     # Convert the user query into an embedding
     query_embedding = embed_model.encode(query).reshape(1, -1)
 

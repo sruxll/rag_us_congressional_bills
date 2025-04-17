@@ -1,12 +1,17 @@
 import re
 import streamlit as st
-from RAG_embedding_LLMgeneration import rag, load_model
+from RAG_embedding_LLMgeneration import rag, load_model, load_files
 
 @st.cache_resource
-def load_default_model():
-    return load_model("Qwen/Qwen2.5-7B-Instruct-1M")
+def load_llm():
+    return load_model("Qwen/Qwen2.5-1.5B-Instruct")
 
-tokenizer, model = load_default_model()
+@st.cache_resource
+def read_files():
+    return load_files()
+
+tokenizer, model = load_llm()
+faiss_index, df = read_files()
 
 with st.sidebar:
     # add an image
@@ -30,7 +35,7 @@ if prompt := st.chat_input():
     st.session_state["messages"].append({"role": "user", "content": prompt})
     st.chat_message("user").markdown(prompt)
 
-    msg = rag(prompt, tokenizer, model)
+    msg = rag(prompt, tokenizer, model, faiss_index, df)
     
     # extract answer and explanation
     answer_match = re.search(r'<answer>(.*?)</answer>', msg, re.DOTALL)
