@@ -44,7 +44,6 @@ device = "cuda:0" if torch.cuda.is_available() else "cpu"
 def load_model(model_name):
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForCausalLM.from_pretrained(model_name)
-    tokenizer = tokenizer.to(device)
     model = model.to(device)
     return tokenizer, model
 
