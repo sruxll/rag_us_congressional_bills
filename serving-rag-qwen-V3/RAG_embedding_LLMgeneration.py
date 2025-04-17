@@ -39,8 +39,9 @@ Output
 """
 
 
+device = "cuda:0" if torch.cuda.is_available() else "cpu"
+
 def load_model(model_name):
-    device = "cuda:0" if torch.cuda.is_available() else "cpu"
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForCausalLM.from_pretrained(model_name)
     tokenizer = tokenizer.to(device)
@@ -67,7 +68,7 @@ def load_files():
 
 def rag(query, tokenizer, model, faiss_index, df, top_k=5):
     # Load Sentence Transformer for embeddings
-    embed_model = SentenceTransformer('all-MiniLM-L6-v2', device="cpu")
+    embed_model = SentenceTransformer('all-MiniLM-L6-v2', device=device)
     # Convert the user query into an embedding
     query_embedding = embed_model.encode(query).reshape(1, -1)
 
