@@ -55,9 +55,36 @@ huggingface-cli login <YOUR-HUGGINGFACE-ACCESS-TOKEN>
 streamlit run streamlit_app.py
 ```
 
-## How to Run the Final App with GPUs
+## How to Run the Streamlit App on GCP 🚀
 
-1. Procure GPU GCP machine with appropriate boot disk and image
-2. Clone this repository
-3. Run ./docker-startup build
-4. Run ./docker-startup deploy-gpu
+1. Get your free Gemini API key
+
+- go to [Google AI Studio](https://aistudio.google.com/)
+- create a new api key in a new project or an existing one in GCP, which is `<YOUR_GEMINI_API_KEY>`
+
+2. Procure GCP machine with appropriate boot disk, image and metadata setup using the following recommended settings:
+
+- boot disk size: `100GB`
+- image: `Deep Learning VM M129`
+- add gemini api key in metadata:
+  - key: `GEMINI_API_KEY`
+  - value: `<YOUR_GEMINI_API_KEY>`
+
+3. Clone this repository, and then re-direct to the serving-rag-gemini folder
+
+```bash
+git clone <current-repository>
+cd rag_us_congressional_bills/serving-rag-gemini
+```
+
+4. Build the Docker Image
+
+```bash
+./docker-startup build
+```
+
+6. Run the App
+
+```bash
+./docker-startup deploy-gcp
+```
