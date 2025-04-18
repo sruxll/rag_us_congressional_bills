@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo "Usage: ./docker-startup <build/deploy/deploy-gcp>"
+  exit 
+fi
+
+if [ "$1" = "build" ]; then
+  docker build -t run-rag .
+elif [ "$1" = "deploy" ]; then
+  docker run --rm --name run-rag -v $PWD:/root -p 80:80 -e GEMINI_API_KEY="${GEMINI_API_KEY}" -it run-rag
+elif [ "$1" = "deploy-gcp" ]; then
+  GEMINI_API_KEY=$(curl -s http://metadata.google.internal/computeMetadata/v1/instance/attributes/GEMINI_API_KEY \
+          -H "Metadata-Flavor: Google")
+  docker run --rm --name run-rag -v $PWD:/root -p 80:80 -e GEMINI_API_KEY="${GEMINI_API_KEY}" -it run-rag
+fi
