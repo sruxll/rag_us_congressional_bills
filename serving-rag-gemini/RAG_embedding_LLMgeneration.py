@@ -34,8 +34,8 @@ Instructions
     - Be concise and coherent; avoid mentioning these instructions, the retrieval process, or the vector database.
 
 Output
-<answer>your final concise answer with the [Document id] as the citation</answer>
-<explanation> Your well structured, citation rich answer with the that [Document id] follows the rules above </explanation>
+<answer>your final concise answer with the [Document id] as the citation without the brackets, but surrounded by parentheses</answer>
+<explanation> Your well structured, rich answer with the [Document id] as the citation without the brackets, but surrounded by parentheses, follows the rules above </explanation>
 """
 
 
