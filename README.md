@@ -9,12 +9,20 @@ This project develops a Retrieval-Augmented Generation (RAG) system that uses a 
 - **Data Processing:**
 
   - Extract bill texts from XML files.
-  - Chunk texts into 512-word segments.
+  - Chunk texts into 512-word segments with overlap.
   - Fine-tune a small FLAN-t5 for topic tagging.
 
 - **Retrieval & Generation:**
-  - Experiment with FAISS and Marqo for vector-based retrieval.
+  - Experiment with FAISS (or Marqo in POC) for vector-based retrieval.
   - Experiment with different LLMs to generate answers which match the information retrieved for the vector database.
+    - deepseek/deepseek-r1
+    - google/gemini-2.0-flash
+    - qwen/qwq-32b
+    - deepseek/deepseek-chat-v3-0324
+    - Meta-Llama-3.1-8B-Instruct
+    - Qwen/Qwen2.5-7b-instruct-1m
+    - Qwen/Qwen2.5-1.5B-Instruct
+    - mistral-7b-instruct-v0.1
 
 ## Data Sources
 
@@ -24,7 +32,7 @@ This project develops a Retrieval-Augmented Generation (RAG) system that uses a 
 ## Deployment
 
 - **Web Interface:** Built with Streamlit.
-- **Docker:** A pre-built Docker image is provided for easy deployment.
+- **Docker:** Built Docker image with provided [docker file](serving-rag-gemini/Dockerfile) in the repository.
 - **Hosting:** Deployed on Google Cloud Platform.
 
 ## How to Run POC
@@ -73,7 +81,7 @@ streamlit run streamlit_app.py
 3. Clone this repository, and then re-direct to the serving-rag-gemini folder
 
 ```bash
-git clone <current-repository>
+git clone https://github.com/sruxll/rag_us_congressional_bills.git
 cd rag_us_congressional_bills/serving-rag-gemini
 ```
 
