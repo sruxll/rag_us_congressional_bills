@@ -47,6 +47,11 @@ docker run --name marqo -it -p 8882:8882 marqoai/marqo:latest
 
 2. Generate index using Marqo:
 
+```bash
+git clone https://github.com/sruxll/rag_us_congressional_bills.git
+cd archive/POC
+```
+
 ```python
 python generate_index_marqo.py
 ```
