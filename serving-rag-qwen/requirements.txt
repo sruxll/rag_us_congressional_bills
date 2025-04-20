@@ -1,9 +1,0 @@
-streamlit
-pandas
-torch 
-torchvision 
-torchaudio
-transformers
-sentence-transformers
-nltk
-faiss-cpu
