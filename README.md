@@ -73,7 +73,7 @@ streamlit run streamlit_app.py
 1. Get your free Gemini API key
 
 - go to [Google AI Studio](https://aistudio.google.com/)
-- create a new api key in a new project or an existing one in GCP, which is `<YOUR_GEMINI_API_KEY>`
+- create a new api key in a new project or an existing one in GCP, which is `<YOUR_GEMINI_API_KEY>`, and save it.
 
 2. Procure GCP machine with appropriate boot disk, image and metadata setup using the following recommended settings:
 
@@ -91,7 +91,7 @@ streamlit run streamlit_app.py
   - value: `<YOUR_GEMINI_API_KEY>`
 - leave the rest of the configuration at its default settings
 
-3. Clone this repository, and then re-direct to the serving-rag-gemini folder
+3. Once the VM instance is running, open an SSH session in the browser. Clone this repository, then navigate to the serving-rag-gemini folder.
 
 ```bash
 git clone https://github.com/sruxll/rag_us_congressional_bills.git
