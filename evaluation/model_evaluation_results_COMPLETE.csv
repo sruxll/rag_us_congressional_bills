@@ -1,0 +1,80 @@
+question_id,category,query,model,success,response_time,bert_score,cosine_similarity,rouge_l,overlap,summary_length,response_text
+1,Environment,What bills address climate change and renewable energy?,deepseek/deepseek-r1:free,True,94.86,0.837,0.719,0.291,0.3,1251,"<answer>The bills described in the documents address climate change through renewable energy tax credits (Doc1), agricultural climate adaptation programs (Doc2), and carbon emission reductions in rural energy systems (Doc2). No specific bill names or numbers are provided in the retrieved documents.</answer>
+
+<explanation>
+The documents outline climate-related legislation without specifying bill titles or numbers. 
+
+1. Doc1 describes a bill establishing tax credits for electric vehicles, hybrid t"
+1,Environment,What bills address climate change and renewable energy?,google/gemini-2.0-flash-exp:free,True,2.79,0.872,0.741,0.387,0.2,1456,"<answer>Several bills address climate change and renewable energy by expanding USDA programs to incorporate climate change adaptation and mitigation, improving soil health, preserving farmland and grassland, and changing programs that support renewable energy in rural areas to address carbon emissions in the agriculture sector [Doc2, Doc3]. One bill also terminates specified fossil fuel subsidies, creates a climate duty for carbon-intensive products imported from other countries, and establishes"
+1,Environment,What bills address climate change and renewable energy?,qwen/qwq-32b:free,True,27.12,0.847,0.747,0.304,0.3,1849,"<answer>
+The retrieved documents mention two bills addressing climate change and renewable energy: one establishes a Climate Fund, terminates fossil fuel subsidies, introduces tax credits for electric vehicles, hybrid trucks, biofuels, and alternative fuels, and imposes a climate duty on carbon-intensive imports [Doc1]. Another expands USDA programs to incorporate climate adaptation/mitigation in agriculture, including soil health, farmland preservation, and rural renewable energy initiatives to"
+1,Environment,What bills address climate change and renewable energy?,google/gemini-2.0-flash-thinking-exp-1219:free,False,0.45,0,0,0,0,5,ERROR
+1,Environment,What bills address climate change and renewable energy?,deepseek/deepseek-chat-v3-0324:free,True,7.3,0.858,0.733,0.383,0.4,1477,"<answer>Two bills address climate change and renewable energy: one focuses on terminating fossil fuel subsidies, creating a climate duty for imports, and establishing tax credits and grant programs for renewable energy [Doc1], while another expands USDA programs to incorporate climate change adaptation and mitigation, including renewable energy support in rural areas [Doc2, Doc3].</answer>
+
+<explanation>
+The documents describe two distinct bills addressing climate change and renewable energy. 
+
+"
+2,Healthcare,What legislation exists for healthcare access and affordability?,deepseek/deepseek-r1:free,True,47.77,0.812,0.719,0.176,0.308,1445,"<answer>The key legislation includes the Patient Protection and Affordable Care Act (ACA) [Doc1, Doc3] and the proposed Affordability is Access Act [Doc2].</answer>
+
+<explanation>
+1. **Patient Protection and Affordable Care Act (ACA)**  
+   The ACA (2010) is explicitly referenced in both Doc1 and Doc3. Doc1 discusses potential reforms or repeals of the ACA and its associated reconciliation act, confirming its status as existing legislation. Doc3 outlines procedural restrictions on amending or re"
+2,Healthcare,What legislation exists for healthcare access and affordability?,google/gemini-2.0-flash-exp:free,True,2.51,0.845,0.744,0.243,0.231,840,"<answer>The Patient Protection and Affordable Care Act and the Health Care and Education Affordability Reconciliation Act of 2010 are existing legislations regarding healthcare access and affordability [Doc1, Doc3]. Additionally, the Affordability is Access Act requires private health insurance plans to cover over-the-counter contraceptives approved by the FDA [Doc2].
+</answer>
+<explanation>The documents mention a few pieces of legislation related to healthcare access and affordability. The Pati"
+2,Healthcare,What legislation exists for healthcare access and affordability?,qwen/qwq-32b:free,True,9.65,0.829,0.744,0.245,0.231,1365,"<answer>
+The Patient Protection and Affordable Care Act (ACA) and the Health Care and Education Affordability Reconciliation Act of 2010 are existing legislation addressing healthcare access and affordability [Doc1, Doc3]. The Affordability is Access Act, a proposed bill requiring coverage of over-the-counter contraceptives, is not yet law [Doc2].
+</answer>
+
+<explanation>
+The retrieved documents identify two major pieces of existing legislation related to healthcare access and affordability. The"
+2,Healthcare,What legislation exists for healthcare access and affordability?,google/gemini-2.0-flash-thinking-exp-1219:free,False,0.27,0,0,0,0,5,ERROR
+2,Healthcare,What legislation exists for healthcare access and affordability?,deepseek/deepseek-chat-v3-0324:free,False,100.76,0,0,0,0,0,
+3,Immigration,What policies exist regarding border security and immigration reform?,deepseek/deepseek-r1:free,True,18.26,0.844,0.723,0.256,0.5,1546,"<answer>Policies include rescinding Executive Order 13767 (2017) on border security measures [Doc1], establishing regional processing centers for immigration activities under the Bipartisan Border Solutions Act of 2021 [Doc3], and operational processes like constructing barriers and infrastructure improvements [Doc2].</answer>
+
+<explanation>
+1. **Rescission of Executive Order 13767**: A bill cited in Doc1 revoked the 2017 executive order that had mandated physical border barriers, expanded deten"
+3,Immigration,What policies exist regarding border security and immigration reform?,google/gemini-2.0-flash-exp:free,True,2.69,0.895,0.757,0.453,0.5,1814,"<answer>Executive Order 13767, also known as ""Border Security and Immigration Enforcement Improvements,"" directs actions concerning physical barriers, detention facilities, more Border Patrol agents, reporting requirements on foreign aid to Mexico, and parole and asylum procedures [Doc1]. The Bipartisan Border Solutions Act of 2021 aims to establish regional processing centers along the southern border for immigration-related activities such as criminal history checks, medical screenings, asylum"
+3,Immigration,What policies exist regarding border security and immigration reform?,qwen/qwq-32b:free,True,15.36,0.859,0.745,0.281,0.357,1493,"<answer>
+Current policies include the Bipartisan Border Solutions Act of 2021, establishing regional processing centers for asylum and screening [Doc3], and measures such as border barriers, enforcement operations, infrastructure improvements, and student visa verification [Doc2].
+</answer>
+
+<explanation>
+The retrieved documents outline two key policies related to border security and immigration reform:
+
+1. **Bipartisan Border Solutions Act of 2021** [Doc3]: This law mandates the establishment o"
+3,Immigration,What policies exist regarding border security and immigration reform?,google/gemini-2.0-flash-thinking-exp-1219:free,False,0.25,0,0,0,0,5,ERROR
+3,Immigration,What policies exist regarding border security and immigration reform?,deepseek/deepseek-chat-v3-0324:free,True,7.46,0.86,0.726,0.397,0.429,1253,"<answer>
+Policies regarding border security and immigration reform include rescinding Executive Order 13767 (Doc1), constructing border barriers and improving infrastructure (Doc2), and establishing regional processing centers under the Bipartisan Border Solutions Act of 2021 (Doc3).
+</answer>
+
+<explanation>
+1. **Rescinding Executive Order 13767**: This policy involved directives concerning physical barriers, detention facilities, additional Border Patrol agents, and asylum procedures along the "
+4,Technology,How is Congress addressing AI regulation and data privacy?,deepseek/deepseek-r1:free,True,12.27,0.832,0.713,0.209,0.125,1132,"<answer>Congress is addressing AI regulation and data privacy through legislation like the AI for Agency Impact Act, which requires federal agencies to implement AI strategies with data security and privacy procedures [Doc2].</answer>
+
+<explanation>
+The **AI for Agency Impact Act (Doc2)** directly addresses data privacy by mandating that federal agency AI strategies include ""procedures to ensure data security and privacy"" alongside human oversight mechanisms. This establishes a framework for res"
+4,Technology,How is Congress addressing AI regulation and data privacy?,google/gemini-2.0-flash-exp:free,True,3.17,0.87,0.804,0.416,0.625,1226,"<answer>Congress is considering several bills related to AI regulation, including the AI PLAN Act, which addresses the risks of AI in financial crimes [Doc1], the AI for Agency Impact Act, which focuses on AI strategy and data privacy within federal agencies [Doc2], and the AI for National Security Act, which involves AI in cybersecurity for the Department of Defense [Doc3].</answer>
+<explanation>Congress is actively engaged in addressing AI regulation and data privacy through several proposed b"
+4,Technology,How is Congress addressing AI regulation and data privacy?,qwen/qwq-32b:free,False,57.74,0,0,0,0,0,
+4,Technology,How is Congress addressing AI regulation and data privacy?,google/gemini-2.0-flash-thinking-exp-1219:free,False,0.46,0,0,0,0,5,ERROR
+4,Technology,How is Congress addressing AI regulation and data privacy?,deepseek/deepseek-chat-v3-0324:free,True,7.71,0.831,0.7,0.22,0.125,1340,"<answer>Congress is addressing AI regulation and data privacy through multiple bills: the AI PLAN Act (Doc1) focuses on risks of AI in financial crimes, the AI for Agency Impact Act (Doc2) mandates federal agencies to establish AI strategies with data privacy measures, and the AI for National Security Act (Doc3) modifies DOD cybersecurity policies involving AI.</answer>
+
+<explanation>
+1. The **AI PLAN Act** (Doc1) requires Treasury, DHS, and Commerce to report on AI-related financial crime risks"
+5,Education,What bills exist for student loan forgiveness and education funding?,deepseek/deepseek-r1:free,True,56.15,0.833,0.748,0.272,0.538,1487,"<answer>The ASAP Forgiveness Act (H.R. 4144) exists to cancel up to $30,000 in federal student loans for eligible borrowers after 60 payments and 10 years of employment [Doc1]. Additional provisions expand TEACH grants, public service loan forgiveness, and educator-specific forgiveness programs [Doc2][Doc3].</answer>
+
+<explanation>
+1. **ASAP Forgiveness Act (H.R. 4144)**: Requires cancellation of up to $30,000 in federal student loan debt for borrowers who made 60 monthly payments and maintained"
+5,Education,What bills exist for student loan forgiveness and education funding?,google/gemini-2.0-flash-exp:free,True,2.92,0.878,0.786,0.45,0.692,1398,"<answer>
+The ASAP Forgiveness Act cancels up to $30,000 of interest and principal for borrowers who have made 60 monthly payments on a Federal Direct Loan and have been employed for 10 years after leaving the IHE for which the loan was made [Doc1]. There is also a bill that expands public service loan forgiveness programs and increases college access and success for certain students [Doc2]. Additionally, there is a bill that revises the Teacher Education Assistance for College and Higher Educati"
+5,Education,What bills exist for student loan forgiveness and education funding?,qwen/qwq-32b:free,True,38.22,0.868,0.791,0.375,0.538,2262,"<answer>
+The Affording Students A Path to Forgiveness Act (ASAP Forgiveness Act) [Doc1] allows up to $30,000 in federal student loan cancellation after 60 payments and 10 years of post-graduation employment. Another bill [Doc2] expands public service loan forgiveness (e.g., TEACH grants), introduces new repayment plans, and improves college access for underrepresented groups. A third bill [Doc3] focuses on educator support, revising TEACH grants to increase maximum amounts and expanding educator"
+5,Education,What bills exist for student loan forgiveness and education funding?,google/gemini-2.0-flash-thinking-exp-1219:free,False,0.24,0,0,0,0,5,ERROR
+5,Education,What bills exist for student loan forgiveness and education funding?,deepseek/deepseek-chat-v3-0324:free,True,49.44,0.868,0.768,0.394,0.615,1345,"<answer>
+The documents mention three bills related to student loan forgiveness and education funding: the ASAP Forgiveness Act (Doc1), a bill expanding public service loan forgiveness programs (Doc2), and a bill revising the Teacher Loan Forgiveness Program (Doc3).
+</answer>
+
+<explanation>
+1. The ASAP Forgiveness Act (Doc1) requires the Department of Education to cancel up to $30,000 of interest and principal on Federal Direct Loans for borrowers who have made 60 monthly payments and have been e"
