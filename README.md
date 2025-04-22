@@ -78,7 +78,7 @@ streamlit run streamlit_app.py
 2. Procure GCP machine with appropriate boot disk, image and metadata setup using the following recommended settings:
 
 - Machine configuration:
-  - type: select "N2" with n2-standard-2 (2 vCPU, 1 core, 8 GB memory)
+  - type: select `N2` with `n2-standard-2 (2 vCPU, 1 core, 8 GB memory)`
 - OS and storage: change the public images to
   - operating system: `Deep Learning on Linux`
   - version: `Deep Learning VM M129`
