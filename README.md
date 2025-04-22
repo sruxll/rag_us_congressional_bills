@@ -77,11 +77,19 @@ streamlit run streamlit_app.py
 
 2. Procure GCP machine with appropriate boot disk, image and metadata setup using the following recommended settings:
 
-- boot disk size: `100GB`
-- image: `Deep Learning VM M129`
-- add gemini api key in metadata:
+- Machine configuration:
+  - type: select "N2" with n2-standard-2 (2 vCPU, 1 core, 8 GB memory)
+- OS and storage: change the public images to
+  - operating system: `Deep Learning on Linux`
+  - version: `Deep Learning VM M129`
+  - size: `100GB`
+- Networking:
+  - Allow HTTP traffic
+  - Allow HTTPS traffic
+- Advanced: add gemini api key into Metadata section:
   - key: `GEMINI_API_KEY`
   - value: `<YOUR_GEMINI_API_KEY>`
+- leave the rest of the configuration at its default settings
 
 3. Clone this repository, and then re-direct to the serving-rag-gemini folder
 
