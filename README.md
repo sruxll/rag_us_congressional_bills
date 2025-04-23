@@ -27,7 +27,7 @@ This project develops a Retrieval-Augmented Generation (RAG) system that uses a 
 ## Data Sources and Verification
 
 - Primary legislative documents from [GovInfo](https://www.govinfo.gov/app/collection/BILLS).
-- For output verification, head to [GovInfo](https://www.govinfo.gov/) and press "Search". Then enter the value inside (id...) the generated output, but remove the beginning "id" character. 
+- For output verification, head to [GovInfo](https://www.govinfo.gov/) and press "Search." Then enter the value inside the parentheses (id...) from the generated output, but remove the beginning "id" character. 
 - Additional references from [GovTrack](https://www.govtrack.us/congress/bills/)
 
 ## Deployment
