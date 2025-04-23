@@ -6,3 +6,4 @@ torchaudio
 transformers
 sentence-transformers
 faiss-cpu
+google-genai
