@@ -9,11 +9,11 @@ This project develops a Retrieval-Augmented Generation (RAG) system that uses a 
 - **Data Processing:**
 
   - Extract bill texts from XML files.
-  - Chunk texts into 512-word segments with overlap.
+  - Chunk texts into 512-word segments with overlap using LangChain.
   - Fine-tune a small FLAN-t5 for topic tagging.
 
 - **Retrieval & Generation:**
-  - Experiment with FAISS (or Marqo in POC) for vector-based retrieval.
+  - Experiment with FAISS and all-MiniLM-L6-v2 (or Marqo in POC) for embedded vector-based retrieval.
   - Experiment with different LLMs to generate answers which match the information retrieved for the vector database.
     - deepseek/deepseek-r1
     - google/gemini-2.0-flash
@@ -24,9 +24,10 @@ This project develops a Retrieval-Augmented Generation (RAG) system that uses a 
     - Qwen/Qwen2.5-1.5B-Instruct
     - mistral-7b-instruct-v0.1
 
-## Data Sources
+## Data Sources and Verification
 
 - Primary legislative documents from [GovInfo](https://www.govinfo.gov/app/collection/BILLS).
+- For output verification, head to [GovInfo](https://www.govinfo.gov/) and press "Search". Then enter the value inside (id...) the generated output, but remove the beginning "id" character. 
 - Additional references from [GovTrack](https://www.govtrack.us/congress/bills/)
 
 ## Deployment
