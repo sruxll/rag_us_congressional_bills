@@ -1,0 +1,11 @@
+streamlit
+pandas
+torch 
+torchvision 
+torchaudio
+transformers
+sentence-transformers
+faiss-cpu
+google-genai
+huggingface_hub
+
