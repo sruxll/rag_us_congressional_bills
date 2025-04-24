@@ -112,12 +112,18 @@ cd rag_us_congressional_bills/serving-rag-gemini
 ```
 ## How to Run the Streamlit App on Cloud Run 🚀
 
-Prior to starting cloud deployment, please make sure you have completed the see inital steps outlined in the GCP section above.
+This deployment assumes you have already completed the intial setup from the GCP section above:
 
 ### Prerequisites
 
 - A Gemini API key from [Google AI Studio](https://aistudio.google.com/)
 - A valid Hugging Face access token
+
+  
+Before proceeding, make sure you're logged in to Hugging Face CLI to access the dataset:
+```bash
+huggingface-cli login
+```
 
 ### 1. Set Up the Google Cloud Environment
 
