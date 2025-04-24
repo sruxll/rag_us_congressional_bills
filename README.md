@@ -223,5 +223,5 @@ Create a budget and receive alerts when you approach a spending threshold.
 - Select your billing account
 - Click **Create Budget**
 - Set a monthly threshold (e.g., $5, $10)
-- Setup email alerts to notify you when usage hits your desired limit. additionally, can request notifications when you are a certain percentage away from the threshold amount.
+Set up email alerts to notify you when usage hits your desired limit. For stricter control, you can also receive notifications when you're a specific percentage away from your budget threshold.
   
