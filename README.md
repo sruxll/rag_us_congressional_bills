@@ -110,3 +110,118 @@ cd rag_us_congressional_bills/serving-rag-gemini
 ```bash
 ./docker-startup deploy-gcp
 ```
+## How to Run the Streamlit App on Cloud Run 🚀
+
+Prior to starting cloud deployment, please make sure you have completed the see inital steps outlined in the GCP section above.
+
+### Prerequisites
+
+- A Gemini API key from [Google AI Studio](https://aistudio.google.com/)
+- A valid Hugging Face access token
+
+### 1. Set Up the Google Cloud Environment
+
+Install the Google Cloud CLI:
+```bash
+curl https://sdk.cloud.google.com | bash
+```
+
+Initialize the CLI:
+```bash
+exec -l $SHELL
+gcloud init
+```
+
+Follow the prompts to sign in and set configurations.
+
+### 2. Set Project Properties
+
+Locate your project ID:
+
+- Visit the [API Console](https://console.developers.google.com/)
+- Navigate to **Manage all projects** and copy your project ID
+
+Set the project in your terminal:
+```bash
+gcloud config set project <YOUR_PROJECT_ID>
+```
+
+Enable the necessary APIs:
+```bash
+gcloud services enable run cloudbuild containerregistry
+```
+
+Authenticate your terminal:
+```bash
+gcloud auth login
+```
+
+### 3. Build the Docker Container
+
+From the root of your project directory (where the Dockerfile is located), run:
+```bash
+gcloud builds submit --tag gcr.io/<YOUR_PROJECT_ID>/streamlit-app
+```
+
+### 4. Create and Configure the Gemini API Secret
+
+Create the secret in Secret Manager:
+```bash
+echo -n "your-gemini-api-key-goes-here" | \
+gcloud secrets create gemini-api-key \
+  --data-file=- \
+  --replication-policy=automatic
+```
+
+Grant Cloud Run access to the secret key:
+```bash
+gcloud projects add-iam-policy-binding <YOUR_PROJECT_ID> \
+  --member="serviceAccount:$(gcloud projects describe <YOUR_PROJECT_ID> --format='value(projectNumber)')-compute@developer.gserviceaccount.com" \
+  --role="roles/secretmanager.secretAccessor"
+```
+
+To replace an invalid key use:
+```bash
+echo -n "your-new-api-key-here" | \
+gcloud secrets versions add gemini-api-key --data-file=-
+```
+
+### 5. Deploy to Cloud Run
+
+To deploy an existing container:
+```bash
+bash deploy.sh
+```
+
+To build and deploy in one step:
+```bash
+bash build_and_deploy.sh
+```
+#### To Deploy in terminal:
+```bash
+gcloud run deploy serving-rag-gemini \
+  --image gcr.io/<YOUR_PROJECT_ID>/serving-rag-gemini \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --update-secrets GEMINI_API_KEY=gemini-api-key:latest \
+  --port 8080 \
+  --memory=4Gi \
+  --min-instances=1 \
+  --timeout=600
+```
+
+## Monitoring Usage and Staying Within Credit Limits
+
+To avoid unexpected charges:
+
+### 1. Enable Billing Alerts
+
+Create a budget and receive alerts when you approach a spending threshold.
+
+- Visit the [Billing Budgets & Alerts page](https://console.cloud.google.com/billing)
+- Select your billing account
+- Click **Create Budget**
+- Set a monthly threshold (e.g., $5, $10)
+- Setup email alerts to notify you when usage hits your desired limit. additionally, can request notifications when you are a certain percentage away from the threshold amount.
+  
